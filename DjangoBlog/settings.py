@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIRS = [os.path.join('BASE_DIR', 'templates'),]
+TEMPLATE_DIRS = [os.path.join('BASE_DIR', 'templates'),] # should be lsit or tuble
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog.apps.BlogConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'DjangoBlog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIRS],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
